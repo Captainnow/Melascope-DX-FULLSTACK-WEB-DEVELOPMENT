@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-200">
             <Navbar />
 
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold mb-8 border border-primary-100">
-                    <span className="flex h-2 w-2 bg-primary-600 rounded-full mr-3 animate-pulse"></span>
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-8 border border-primary-100 dark:border-primary-800/50">
+                    <span className="flex h-2 w-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-3 animate-pulse"></span>
                     Research Prototype v2.1 Available
                 </div>
-                <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 tracking-tight leading-tight mb-8">
-                    AI-Powered <span className="text-primary-600">Dermatoscopy</span> <br />
+                <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight mb-8">
+                    AI-Powered <span className="text-primary-600 dark:text-primary-400">Dermatoscopy</span> <br />
                     for Modern Research
                 </h1>
-                <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                     Melascope DX leverages advanced Vision Transformers to categorize skin lesions with breakdown analysis across 31 distinct diagnostic classes.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -27,14 +27,16 @@ export default function LandingPage() {
                             Launch Platform <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
                     </Link>
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                        View Documentation
-                    </Button>
+                    <Link to="/documentation">
+                        <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                            View Documentation
+                        </Button>
+                    </Link>
                 </div>
             </section>
 
             {/* Features Grid */}
-            <section className="py-20 bg-slate-50 border-y border-slate-200">
+            <section className="py-20 bg-slate-50 dark:bg-slate-850 border-y border-slate-200 dark:border-slate-800 transition-colors duration-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -54,12 +56,12 @@ export default function LandingPage() {
                                 desc: "Comprehensive breakdown of confidence scores across all tracked lesion classes."
                             }
                         ].map((feature, idx) => (
-                            <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                            <div key={idx} className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:hover:shadow-slate-800/50 transition-shadow">
+                                <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/40 rounded-xl flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6">
                                     <feature.icon size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+                                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h3>
+                                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -67,11 +69,11 @@ export default function LandingPage() {
             </section>
 
             {/* Simple Footer */}
-            <footer className="bg-white py-12 border-t border-slate-200">
+            <footer className="bg-white dark:bg-slate-900 py-12 border-t border-slate-200 dark:border-slate-800 transition-colors duration-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-slate-500 text-sm">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">
                         &copy; {new Date().getFullYear()} Melascope Research Lab. All rights reserved. <br />
-                        <span className="text-slate-400 mt-2 block">Prototype for research use only. Not for clinical diagnosis.</span>
+                        <span className="text-slate-400 dark:text-slate-500 mt-2 block">Prototype for research use only. Not for clinical diagnosis.</span>
                     </p>
                 </div>
             </footer>

@@ -99,5 +99,26 @@ export const api = {
 
         const data = await response.json();
         return data.content;
+    },
+
+    async generateReport(file: File, patientData: any, prediction: any, advisory: any): Promise<Blob> {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('patientData', JSON.stringify(patientData));
+        formData.append('prediction', JSON.stringify(prediction));
+        if (advisory) {
+            formData.append('advisory', JSON.stringify(advisory));
+        }
+
+        const response = await fetch(`${API_BASE_URL}/api/report/generate`, {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (!response.ok) {
+            throw new Error('Report generation failed');
+        }
+
+        return await response.blob();
     }
 };

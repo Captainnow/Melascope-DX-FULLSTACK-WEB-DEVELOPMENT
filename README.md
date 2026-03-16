@@ -31,11 +31,14 @@ Melascope DX is a skin lesion analysis tool powered by AI.
 3. `npm run dev`
 
 ## Features
-- **Image Analysis**: Upload skin images to classify lesions.
-- **Advisory Logic**: 
-  - **Initial Report**: Generates safe, educational advice based on the predicted label.
-  - **Chatbot**: Allows follow-up questions (e.g., "Is this contagious?") while maintaining strict safety constraints (no diagnosis).
-- **Advisory Panel**: Expandable UI with smooth animations.
+- **Dashboard & Patient Records**: Populated mock data tables showing recent screening history.
+- **Image Analysis**: Upload skin images to classify lesions using the connected AI model.
+- **PDF Reports**: One-click generation of comprehensive PDF assessment reports.
+- **Settings & Preferences**: Fully designed settings interface for Profile Details, Notifications, and Security management.
+- **Interactive AI Chatbot (MelaBot)**: 
+  - **Custom 3D Animated Avatar**: Features a built-in interactive SVG robot head that floats, blinks, and squints organically.
+  - **Conversational Guidance**: Ask follow-up questions about predictions while maintaining strict safety constraints (no diagnosis).
+  - **Intent Detection**: The bot supports commands like "download my report" and "clear chat".
 
 ## Author
 **V KARTHIKEYAN**

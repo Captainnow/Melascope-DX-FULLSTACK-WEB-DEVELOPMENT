@@ -73,3 +73,30 @@ async def analyze_lesion(file: UploadFile = File(...)):
         import traceback
         traceback.print_exc()
         return {"error": str(e), "top_prediction": {"label": "Error", "confidence": 0.0}, "predictions": []}
+
+from fastapi import Form
+from fastapi.responses import Response
+from report_generator import generate_pdf_report
+
+@app.post("/api/report/generate")
+async def generate_report_api(
+    file: UploadFile = File(...),
+    patientData: str = Form("{}"),
+    prediction: str = Form("{}"),
+    advisory: str = Form("{}")
+):
+    try:
+        image_bytes = await file.read()
+        pdf_bytes = generate_pdf_report(image_bytes, patientData, prediction, advisory)
+        
+        return Response(
+            content=pdf_bytes,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f"attachment; filename=report.pdf"
+            }
+        )
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return {"error": str(e)}

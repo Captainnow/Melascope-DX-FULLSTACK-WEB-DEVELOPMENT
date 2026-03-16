@@ -17,6 +17,7 @@ Melascope DX is an AI-powered skin lesion analysis tool designed to assist in th
 - **Components**:
   - **Welcome Message**: Personalized greeting.
   - **Quick Stats**: Overview of activity (Total Scans, High Risk Cases).
+  - **Recent Screenings Table**: A data table displaying mock patient history, prediction labels, and status badges.
   - **Navigation**: Access to key features via sidebar.
 
 ### **Step 3: Assessments (`/app/assessments`)**
@@ -29,8 +30,23 @@ Melascope DX is an AI-powered skin lesion analysis tool designed to assist in th
   3. **Results**:
      - **Prediction**: Display of the most likely condition + confidence score.
      - **AI Advisory**: 
-       - **Interactive Chatbot (MelaBot)**: Users can ask follow-up questions about the analysis.
        - "AI Medical Advisor" interface offering guidance based on the result.
+       - **Interactive Floating Chatbot (MelaBot)**: 
+         - A bottom-right floating widget featuring a custom Animated 3D-Style SVG Robot Head that organically breathes, blinks, and squints.
+         - Users can ask follow-up questions about the analysis (e.g., "Is this contagious?").
+         - Users can command "clear chat" to reset history or "download my report" to trigger a local PDF generation.
+
+### **Step 4: Patients (`/app/patients`)**
+- **Purpose**: Dedicated patient management view.
+- **Components**:
+  - A comprehensive data table populated with mock patient demographics, last visit dates, top diagnostic focus, and action buttons.
+
+### **Step 5: Settings (`/app/settings`)**
+- **Purpose**: Manage account preferences and security.
+- **Components**:
+  - **Profile Details Tab**: Manage avatar, name, and clinic details.
+  - **Notifications Tab**: Configuration toggles for emails and alerts.
+  - **Security Tab**: Password management, 2FA setup, and account deletion options.
 
 ---
 
@@ -58,7 +74,8 @@ graph TD
   - Logo
   - Dashboard Icon
   - Assessments Icon
-  - *(Placeholders for future modules: Patients, Settings)*
+  - Patients Icon
+  - Settings Icon
 - **Main Content Area**: Dynamic content based on route.
 - **MelaBot Interface**: Integrated AI assistant for guidance.
 
