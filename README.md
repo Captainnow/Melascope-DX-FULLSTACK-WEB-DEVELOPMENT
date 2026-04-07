@@ -2,6 +2,9 @@
 
 Melascope DX is a skin lesion analysis tool powered by AI.
 
+<img width="1913" height="961" alt="image" src="https://github.com/user-attachments/assets/ee519985-f654-4045-a1a6-75b3c49efcc3" />
+
+
 <img width="1914" height="961" alt="image" src="https://github.com/user-attachments/assets/651a1457-2e66-4b83-97a9-949de4ae3ad0" />
 
 
