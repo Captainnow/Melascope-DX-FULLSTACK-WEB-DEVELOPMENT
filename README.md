@@ -30,6 +30,7 @@ Melascope DX is a skin lesion analysis tool powered by AI.
    LLM_MODEL=gpt-4o-mini  # or llama-3.1-70b-versatile etc
    ```
 6. Run: `uvicorn main:app --reload`
+7. Verify the backend is running by checking the API health check at [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health) or explore the interactive API Documentation (Swagger) at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
 ### Frontend
 1. `cd frontend`
